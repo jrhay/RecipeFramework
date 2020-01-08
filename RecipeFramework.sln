@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29613.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RecipeFramework", "RecipeFramework\RecipeFramework.csproj", "{F54DC95F-4BD2-435D-A016-6212CEEBDA32}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Testers", "Testers", "{23668B05-00AA-4929-A7AE-1FAC954BA6C3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinFormsRecipeTester", "Testers\WinForms\WinFormsRecipeTester\WinFormsRecipeTester.csproj", "{D9B4CB16-2194-4214-AD05-94E00F98A0D6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F54DC95F-4BD2-435D-A016-6212CEEBDA32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F54DC95F-4BD2-435D-A016-6212CEEBDA32}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F54DC95F-4BD2-435D-A016-6212CEEBDA32}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F54DC95F-4BD2-435D-A016-6212CEEBDA32}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D9B4CB16-2194-4214-AD05-94E00F98A0D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9B4CB16-2194-4214-AD05-94E00F98A0D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9B4CB16-2194-4214-AD05-94E00F98A0D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9B4CB16-2194-4214-AD05-94E00F98A0D6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D9B4CB16-2194-4214-AD05-94E00F98A0D6} = {23668B05-00AA-4929-A7AE-1FAC954BA6C3}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F6113C17-CB08-4D27-A115-389ADD7C596F}
+	EndGlobalSection
+EndGlobal
