@@ -35,7 +35,7 @@ namespace RecipeFramework
         public string UUID { get; set; }
         
         [YamlMember(Alias = "recipe_name", Order = 1)]
-        public string RecipeName { get; set; }
+        public string Name { get; set; }
 
         [YamlMember(Alias = "author", Order = 3)]
         public string Author { get; set; }
@@ -44,7 +44,7 @@ namespace RecipeFramework
         public string SourceUrl { get; set; }
         
         [YamlMember(Alias = "source_book", Order = 5)]
-        public string SourceBook { get; set; }
+        public string Source { get; set; }
 
         [YamlMember(Alias = "oven_temp", Order = 6)]
         public string OvenTemp { get; set; }

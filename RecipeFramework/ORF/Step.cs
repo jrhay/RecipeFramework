@@ -18,5 +18,18 @@ namespace RecipeFramework.ORF
 
         public Step()
         { }
+
+        public override string ToString()
+        {
+            StringBuilder StepString = new StringBuilder(3);
+            StepString.Append(Instruction);
+            if (!String.IsNullOrEmpty(HACCP))
+                StepString.Append(" [HACCP: " + HACCP + "]");
+
+            foreach (string note in Notes)
+                StepString.Append(" (" + note + ")");
+
+            return StepString.ToString();
+        }
     }
 }

@@ -9,5 +9,6 @@ namespace RecipeFramework.ORF
         public Yield(int Amount, string Units) : base(Amount, Units) { }
 
         public Yield() : base() { }
+
     }
 }

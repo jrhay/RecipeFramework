@@ -17,5 +17,10 @@ namespace RecipeFramework.ORF
 
         public Amount()
         { }
+
+        public override string ToString()
+        {
+            return amount.ToString() + " " + unit;
+        }
     }
 }

@@ -9,21 +9,21 @@ namespace RecipeFramework.ORF
 {
     class ORFTypeConverter : IYamlTypeConverter
     {
-        private static readonly Type _yieldNodeType = typeof(Yield);
+        private static readonly Type _yieldType = typeof(Yield);
         private static readonly Type _ingredientType = typeof(Ingredient);
         private static readonly Type _nutritionType = typeof(Nutrition);
 
         public bool Accepts(Type type)
         {
             return
-                (type == _yieldNodeType) ||
+                (type == _yieldType) ||
                 (type == _ingredientType) ||
                 (type == _nutritionType);
         }
 
         public object ReadYaml(IParser parser, Type type)
         {
-            if (type == _yieldNodeType)
+            if (type == _yieldType)
             {
                 parser.Consume<MappingStart>();
 
