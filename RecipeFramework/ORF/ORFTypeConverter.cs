@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RecipeFramework.Tools;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using YamlDotNet.Core;
@@ -25,31 +26,11 @@ namespace RecipeFramework.ORF
         {
             if (type == _yieldType)
             {
-                parser.Consume<MappingStart>();
-
-                string unit = parser.Consume<Scalar>().Value;
-                string amount = parser.Consume<Scalar>().Value;
-
-                parser.Consume<MappingEnd>();
-                return new Yield(int.Parse(amount), unit);
+                return Yield.Parse(parser);
             }
             else if (type == _ingredientType)
             {
-                parser.Consume<MappingStart>();
-
-                string name = parser.Consume<Scalar>().Value;
-                Ingredient ingredient = new Ingredient(name);
-
-                int nestlevel = 1;
-                do
-                {
-                    // TODO: Finish parsing ingredients
-                    nestlevel += parser.Current.NestingIncrease;
-                    parser.MoveNext();
-                } while (nestlevel > 1);
-
-                parser.Consume<MappingEnd>();
-                return ingredient;
+                return Ingredient.Parse(parser);
             }
             else if (type == _nutritionType)
             {
@@ -61,7 +42,7 @@ namespace RecipeFramework.ORF
                 int nestlevel = 1;
                 do
                 {
-                    // TODO: Finish parsing ingredients
+                    // TODO: Finish parsing nutrition info
                     nestlevel += parser.Current.NestingIncrease;
                     parser.MoveNext();
                 } while (nestlevel > 1);

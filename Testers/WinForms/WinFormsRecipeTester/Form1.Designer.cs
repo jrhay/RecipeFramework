@@ -55,6 +55,11 @@
             this.txtRecipeUUID = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtRecipeName = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.lstIngredientNotes = new System.Windows.Forms.ListBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.lstIngredientSubstitutionNotes = new System.Windows.Forms.ListBox();
+            this.cmbIngredientSubstitutions = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -80,6 +85,11 @@
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.cmbIngredientSubstitutions);
+            this.groupBox1.Controls.Add(this.label14);
+            this.groupBox1.Controls.Add(this.lstIngredientSubstitutionNotes);
+            this.groupBox1.Controls.Add(this.label13);
+            this.groupBox1.Controls.Add(this.lstIngredientNotes);
             this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.lstRecipeNotes);
             this.groupBox1.Controls.Add(this.label11);
@@ -114,7 +124,7 @@
             // label12
             // 
             this.label12.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.label12.Location = new System.Drawing.Point(766, 20);
+            this.label12.Location = new System.Drawing.Point(768, 261);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(176, 20);
             this.label12.TabIndex = 53;
@@ -127,9 +137,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lstRecipeNotes.FormattingEnabled = true;
-            this.lstRecipeNotes.Location = new System.Drawing.Point(769, 41);
+            this.lstRecipeNotes.Location = new System.Drawing.Point(769, 282);
             this.lstRecipeNotes.Name = "lstRecipeNotes";
-            this.lstRecipeNotes.Size = new System.Drawing.Size(282, 472);
+            this.lstRecipeNotes.Size = new System.Drawing.Size(282, 238);
             this.lstRecipeNotes.TabIndex = 52;
             // 
             // label11
@@ -169,6 +179,7 @@
             this.lstRecipeIngredients.Name = "lstRecipeIngredients";
             this.lstRecipeIngredients.Size = new System.Drawing.Size(354, 173);
             this.lstRecipeIngredients.TabIndex = 48;
+            this.lstRecipeIngredients.SelectedIndexChanged += new System.EventHandler(this.lstRecipeIngredients_SelectedIndexChanged);
             // 
             // cmbRecipeYields
             // 
@@ -333,6 +344,51 @@
             this.txtRecipeName.Size = new System.Drawing.Size(176, 20);
             this.txtRecipeName.TabIndex = 31;
             // 
+            // label13
+            // 
+            this.label13.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.label13.Location = new System.Drawing.Point(768, 39);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(85, 20);
+            this.label13.TabIndex = 55;
+            this.label13.Text = "Ingredient Notes";
+            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lstIngredientNotes
+            // 
+            this.lstIngredientNotes.FormattingEnabled = true;
+            this.lstIngredientNotes.Location = new System.Drawing.Point(769, 60);
+            this.lstIngredientNotes.Name = "lstIngredientNotes";
+            this.lstIngredientNotes.Size = new System.Drawing.Size(282, 69);
+            this.lstIngredientNotes.TabIndex = 54;
+            // 
+            // label14
+            // 
+            this.label14.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.label14.Location = new System.Drawing.Point(768, 141);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(128, 20);
+            this.label14.TabIndex = 57;
+            this.label14.Text = "Ingredient Substitutions";
+            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lstIngredientSubstitutionNotes
+            // 
+            this.lstIngredientSubstitutionNotes.FormattingEnabled = true;
+            this.lstIngredientSubstitutionNotes.Location = new System.Drawing.Point(768, 180);
+            this.lstIngredientSubstitutionNotes.Name = "lstIngredientSubstitutionNotes";
+            this.lstIngredientSubstitutionNotes.Size = new System.Drawing.Size(282, 56);
+            this.lstIngredientSubstitutionNotes.TabIndex = 56;
+            // 
+            // cmbIngredientSubstitutions
+            // 
+            this.cmbIngredientSubstitutions.FormattingEnabled = true;
+            this.cmbIngredientSubstitutions.Location = new System.Drawing.Point(768, 159);
+            this.cmbIngredientSubstitutions.Name = "cmbIngredientSubstitutions";
+            this.cmbIngredientSubstitutions.Size = new System.Drawing.Size(280, 21);
+            this.cmbIngredientSubstitutions.TabIndex = 58;
+            this.cmbIngredientSubstitutions.SelectedIndexChanged += new System.EventHandler(this.cmbIngredientSubstitutions_SelectedIndexChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -377,6 +433,11 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.ListBox lstRecipeSteps;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.ComboBox cmbIngredientSubstitutions;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.ListBox lstIngredientSubstitutionNotes;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.ListBox lstIngredientNotes;
     }
 }
 

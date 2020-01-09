@@ -15,6 +15,7 @@ namespace WinFormsRecipeTester
     public partial class Form1 : Form
     {
         Recipe recipe;
+        Ingredient currentIngredient;
 
         public Form1()
         {
@@ -46,6 +47,9 @@ namespace WinFormsRecipeTester
 
             lstRecipeNotes.Items.Clear();
             lstRecipeNotes.Items.AddRange(currentRecipe.Notes.ToArray());
+
+            currentIngredient = null;
+            lstRecipeIngredients_SelectedIndexChanged(null, null);        
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -63,6 +67,35 @@ namespace WinFormsRecipeTester
                 foreach (Ingredient ingredient in recipe.Ingredients)
                     lstRecipeIngredients.Items.Add(ingredient.ToString(cmbRecipeYields.SelectedIndex));
             }
+        }
+
+        private void lstRecipeIngredients_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            lstIngredientNotes.Items.Clear();
+            lstIngredientSubstitutionNotes.Items.Clear();
+            cmbIngredientSubstitutions.Items.Clear();
+            cmbIngredientSubstitutions.Text = null;
+
+            int ingredientIndex = lstRecipeIngredients.SelectedIndex;
+            if ((ingredientIndex >= 0) && (ingredientIndex < recipe.Ingredients.Count))
+            {
+                currentIngredient = recipe.Ingredients[ingredientIndex];
+                lstIngredientNotes.Items.AddRange(currentIngredient.Notes.ToArray());
+                foreach (Ingredient Sub in currentIngredient.Substitutions)
+                    cmbIngredientSubstitutions.Items.Add(Sub.ToString(cmbRecipeYields.SelectedIndex));
+                if (cmbIngredientSubstitutions.Items.Count > 0)
+                    cmbIngredientSubstitutions.SelectedIndex = 0;
+            }
+            else
+                currentIngredient = null;
+        }
+
+        private void cmbIngredientSubstitutions_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            lstIngredientSubstitutionNotes.Items.Clear();
+            int SubIndex = cmbIngredientSubstitutions.SelectedIndex;
+            if ((currentIngredient != null) && (SubIndex >= 0) && (SubIndex < currentIngredient.Substitutions.Count))
+                lstIngredientSubstitutionNotes.Items.AddRange(currentIngredient.Substitutions[SubIndex].Notes.ToArray());
         }
     }
 }
